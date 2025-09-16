@@ -11,6 +11,9 @@
   <header>
     <nav class="navbar">
       <div class="logo"><img src="logo.png" alt="My logo"></div>
+      <div class="hamburger" id="hamburger">
+      ☰
+    </div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#aboutme">About Me</a></li>
@@ -279,6 +282,13 @@ document.querySelectorAll('#experience .card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('expanded');
   });
+});
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navLinksMenu = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  navLinksMenu.classList.toggle('show');
 });
 
   </script>
