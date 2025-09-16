@@ -458,3 +458,42 @@ button:active {
 #projects .card.expanded::after {
   content: "▲";
 }
+/* --- Hamburger Menu --- */
+
+/* Masqué par défaut (grand écran) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  color: #333; /* tu peux adapter la couleur */
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* on cache le menu */
+    flex-direction: column;
+    background: #fff; /* couleur de fond */
+    position: absolute;
+    top: 70px; /* sous la navbar */
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex; /* s'affiche quand on clique sur ☰ */
+  }
+
+  .hamburger {
+    display: block; /* on montre le hamburger */
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: right; /* pour aligner les liens à droite */
+  }
+}
