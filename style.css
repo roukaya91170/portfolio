@@ -459,6 +459,7 @@ button:active {
   content: "▲";
 }
 /* --- Hamburger Menu --- */
+/* --- Hamburger Menu --- */
 
 /* Masqué par défaut (grand écran) */
 .hamburger {
@@ -466,34 +467,45 @@ button:active {
   font-size: 2rem;
   cursor: pointer;
   user-select: none;
-  color: #333; /* tu peux adapter la couleur */
+  color: #ff6600; /* orange pour bien ressortir */
 }
 
 /* Responsive pour petits écrans */
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* on cache le menu */
+    display: none; /* caché par défaut */
     flex-direction: column;
-    background: #fff; /* couleur de fond */
+    background: #1e1e1e; /* fond sombre pour rester dans ton style */
     position: absolute;
-    top: 70px; /* sous la navbar */
+    top: 70px; /* juste en dessous de la navbar */
     right: 0;
-    width: 200px;
+    width: 220px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     border-radius: 8px;
   }
 
   .nav-links.show {
-    display: flex; /* s'affiche quand on clique sur ☰ */
+    display: flex; /* affichage au clic */
   }
 
   .hamburger {
-    display: block; /* on montre le hamburger */
+    display: block; /* hamburger visible */
   }
 
   .nav-links li {
     margin: 15px 0;
-    text-align: right; /* pour aligner les liens à droite */
+    text-align: right;
+  }
+
+  .nav-links a {
+    color: #fff; /* blanc par défaut */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #ff6600; /* orange au survol */
   }
 }
